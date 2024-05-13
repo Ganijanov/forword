@@ -1,6 +1,7 @@
 from telethon.tl.types import Message
 from telethon.sync import TelegramClient, events
 from telethon.tl.types import InputMessagesFilterEmpty, InputMessagesFilterDocument
+import datetime
 
 # Установите свои значения api_id и api_hash
 api_id = 20456561
@@ -41,3 +42,15 @@ with client:
     # Run the client until it's disconnected
     client.run_until_disconnected()
 
+def send():
+    client.send_message(target_group_id, 'Tolov esdan chiqmasin server tohtashiga 1 kun qoldi')
+
+
+def main():
+    today = datetime.date.today()
+    if today.day == 10:
+        send()
+
+
+if '__name__' == '__main__':
+    main()
